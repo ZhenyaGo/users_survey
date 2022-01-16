@@ -48,7 +48,7 @@ public class Question extends BaseEntity {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "question")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonManagedReference
-    private List<Option> options;
+    private Set<Option> options;
 
     public Question() {
 
@@ -97,11 +97,11 @@ public class Question extends BaseEntity {
         this.survey = survey;
     }
 
-    public List<Option> getOptions() {
+    public Set<Option> getOptions() {
         return options;
     }
 
-    public void setOptions(List<Option> options) {
+    public void setOptions(Set<Option> options) {
         this.options = options;
     }
 }

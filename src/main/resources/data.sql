@@ -1,9 +1,9 @@
 INSERT INTO users (name, email, password)
-VALUES ('User', 'user@yandex.ru', 'password'),
-       ('Admin', 'admin@gmail.com', 'admin'),
-       ('Zhenya', 'zhenya@gmail.com', 'password2'),
-       ('Alex', 'alex@gmail.com', 'password3'),
-       ('Peter', 'peter@gmail.com', 'password4');
+VALUES ('User', 'user@yandex.ru', '{noop}password'),
+       ('Admin', 'admin@gmail.com', '{noop}admin'),
+       ('Zhenya', 'zhenya@gmail.com', '{noop}password2'),
+       ('Alex', 'alex@gmail.com', '{noop}password3'),
+       ('Peter', 'peter@gmail.com', '{noop}password4');
 
 
 INSERT INTO user_roles (role, user_id)
@@ -29,7 +29,7 @@ VALUES ( 'TEXT' , 1),
        ( 'MULTIPLE_CHOICE' , 3);
 
 INSERT INTO OPTION(name, question_id)
-VALUES ( '', 1),
+VALUES ( null, 1),
        ( 'Москва', 2),
        ( 'Владимир', 2),
        ( 'Санкт-Петербург', 2),

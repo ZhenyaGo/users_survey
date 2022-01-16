@@ -1,9 +1,9 @@
 package com.example.questionnaire.repository;
 
-import com.example.questionnaire.model.CompletedSurvey;
+
+import com.example.questionnaire.model.Answer;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional(readOnly = true)
-public interface CompletedSurveyRepository extends BaseRepository<CompletedSurvey> {
-
+public interface AnswerRepository extends BaseRepository<Answer> {
 }

@@ -1,4 +1,4 @@
-package com.example.questionnaire.web;
+package com.example.questionnaire.web.admin;
 
 
 import com.example.questionnaire.model.Question;
