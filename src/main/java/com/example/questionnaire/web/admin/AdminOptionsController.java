@@ -24,7 +24,7 @@ public class AdminOptionsController {
         this.questionRepository = questionRepository;
     }
 
-    @PostMapping(value = "/question/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/questions/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     public List<Option> create(@RequestBody List<Option> option, @PathVariable int id) {
         Question question = questionRepository.getById(id);
         for (Option o : option) {

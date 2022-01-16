@@ -1,7 +1,5 @@
 package com.example.questionnaire.model;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -22,9 +20,9 @@ public class Survey extends BaseEntity {
     @Size(max = 100)
     private String name;
 
-    @Column(name = "start_Date", nullable = false)
+    @Column(name = "start_Date", nullable = false, columnDefinition = "timestamp default now()")
     @NotNull
-    private LocalDate startDate;
+    private LocalDate startDate = LocalDate.now();
 
     @Column(name = "end_Date", nullable = false)
     @NotNull

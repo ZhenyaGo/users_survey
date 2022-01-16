@@ -12,6 +12,9 @@ public class AnswerTo extends BaseTo {
 
     String answer;
 
+    String questionName;
+
+
     public AnswerTo() {
 
     }
@@ -23,12 +26,13 @@ public class AnswerTo extends BaseTo {
         this.answer = answer;
     }
 
-    public AnswerTo(Integer id, Integer user_id, Integer survey_id, Integer question_id, String answer) {
+    public AnswerTo(Integer id, Integer user_id, Integer survey_id, Integer question_id, String answer, String questionName) {
         super(id);
         this.user_id = user_id;
         this.survey_id = survey_id;
         this.question_id = question_id;
         this.answer = answer;
+        this.questionName = questionName;
     }
 
     public Integer getUser_id() {

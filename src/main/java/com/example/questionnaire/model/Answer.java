@@ -14,7 +14,7 @@ public class Answer extends BaseEntity {
     private Question question;
 
     @Column(name = "answer")
-    @Size(max = 200)
+    @Size(max = 100)
     private String answer;
 
     @ManyToOne

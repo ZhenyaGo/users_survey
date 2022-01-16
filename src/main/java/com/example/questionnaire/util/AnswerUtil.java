@@ -20,7 +20,7 @@ public class AnswerUtil {
 
     public static AnswerTo createAnswerTo(Answer answer) {
         return new AnswerTo(answer.id(), answer.getUser().id(), answer.getSurvey().id()
-                , answer.getQuestion().id(), answer.getAnswer());
+                , answer.getQuestion().id(), answer.getAnswer(), answer.getQuestion().getText());
     }
 
 

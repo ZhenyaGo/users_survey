@@ -17,8 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import static com.example.questionnaire.web.SecurityUtil.authId;
+import static com.example.questionnaire.util.AnswerUtil.*;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = AnswerController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -58,6 +60,19 @@ public class AnswerController {
 
         return ResponseEntity.created(uriOfNewResource).body(result);
 
+    }
+
+
+    @GetMapping(value = "/surveys/{id}")
+    public List<AnswerTo> getUserAnswers(@PathVariable int id) {
+        List<Answer> userAnswers = repository.getAllByUserIdAndSurveyId(authId(), id);
+        return createAnswerTos(userAnswers);
+    }
+
+    @GetMapping(value = "/surveys/{id}/users/{userId}")
+    public List<AnswerTo> getAnswers(@PathVariable int id, @PathVariable int userId) {
+        List<Answer> userAnswers = repository.getAllByUserIdAndSurveyId(userId, id);
+        return createAnswerTos(userAnswers);
     }
 
 }

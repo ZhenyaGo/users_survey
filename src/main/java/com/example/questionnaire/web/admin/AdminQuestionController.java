@@ -41,7 +41,7 @@ public class AdminQuestionController {
     @PutMapping(value = "/{id}/surveys/{surveyId}",consumes = MediaType.APPLICATION_JSON_VALUE)
     public void update(@RequestBody Question question, @PathVariable int id, @PathVariable int surveyId) {
         ValidationUtil.assureIdConsistent(question, id);
-        Survey survey = surveyRepository.getById(id);
+        Survey survey = surveyRepository.getById(surveyId);
         question.setSurvey(survey);
         repository.save(question);
     }
